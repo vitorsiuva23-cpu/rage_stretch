@@ -1,1 +1,18 @@
+[package]
+name = "rage_stretch"
+version = "1.0.0"
+edition = "2021"
 
+[dependencies]
+eframe = "0.29"
+
+[dependencies.windows-sys]
+version = "0.59"
+features = ["Win32_Graphics_Gdi", "Win32_Foundation"]
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
